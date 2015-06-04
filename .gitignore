@@ -2,9 +2,12 @@
 *.log
 
 # sbt specific
+.classpath
 .cache
 .history
+.project
 .lib/
+.temp/
 dist/*
 target/
 lib_managed/
