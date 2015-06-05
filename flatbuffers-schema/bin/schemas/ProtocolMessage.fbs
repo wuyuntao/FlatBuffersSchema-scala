@@ -1,8 +1,0 @@
-namespace com.wuyuntao.flatbuffers.schema;
-
-table ProtocolMessage {
-	id: int;
-	body: [ubyte];
-}
-
-root_type ProtocolMessage;
