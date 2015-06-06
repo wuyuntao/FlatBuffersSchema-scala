@@ -9,7 +9,7 @@ lazy val commonSettings = Seq(
 lazy val core = (project in file("flatbuffers-schema")).
   settings(commonSettings: _*).
   settings(
-    name := "FlatBuffersSchema",
+    name := "flatbuffers-schema",
 
     libraryDependencies ++= Seq(
       "junit" % "junit" % "4.11" % "test",
