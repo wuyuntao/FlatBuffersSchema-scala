@@ -7,6 +7,7 @@
 .cache-main
 .history
 .project
+.settings
 .lib/
 .temp/
 bin/
