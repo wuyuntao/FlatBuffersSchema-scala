@@ -5,6 +5,7 @@
 .classpath
 .cache
 .cache-main
+.cache-tests
 .history
 .project
 .settings

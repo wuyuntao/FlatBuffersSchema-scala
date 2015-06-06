@@ -3,7 +3,7 @@ package com.wuyuntao.flatbuffers.schema
 import java.nio.ByteBuffer
 import scala.collection.mutable.Queue
 
-class ByteQueue {
+private class ByteQueue {
   private val queue = new Queue[Array[Byte]]
   private var passedBytes = 0
 
@@ -17,7 +17,7 @@ class ByteQueue {
   def dequeue(): Option[Int] = {
     val bytes = dequeue(FlatBufferExtensions.SizeOfInt)
 
-    if (bytes == null)
+    if (bytes != null)
       return Option(ByteBuffer.wrap(bytes).getInt)
     else
       return null
