@@ -3,7 +3,7 @@ package com.wuyuntao.flatbuffers.schema
 import java.nio.ByteBuffer
 import scala.collection.mutable.Queue
 
-private class ByteQueue {
+class ByteQueue {
   private val queue = new Queue[Array[Byte]]
   private var passedBytes = 0
 
