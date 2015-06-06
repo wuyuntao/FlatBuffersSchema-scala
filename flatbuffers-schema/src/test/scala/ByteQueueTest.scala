@@ -1,10 +1,9 @@
 package com.wuyuntao.flatbuffers.schema
 
 import java.nio.ByteBuffer
-import org.junit.Test
-import junit.framework.TestCase
-import org.junit.Assert
 import scala.collection.immutable.StringOps
+import org.junit.Assert
+import junit.framework.TestCase
 
 final class ByteQueueTest extends TestCase {
   private final val intValue = 21
@@ -31,16 +30,16 @@ final class ByteQueueTest extends TestCase {
     Assert.assertFalse(queue.hasBytes(5))
     Assert.assertEquals(intValue, queue.dequeue().get)
   }
-  
+
   def testDequeueBytes = {
     val bytes = new StringOps(stringValue).getBytes
     queue.enqueue(bytes)
-    
+
     Assert.assertTrue(queue.hasBytes(bytes.length))
     Assert.assertFalse(queue.hasBytes(bytes.length + 1))
-    
+
     val dequeuedBytes = queue.dequeue(bytes.length)
-    var dequeuedValue = new String(dequeuedBytes, "UTF-8")
+    val dequeuedValue = new String(dequeuedBytes, "UTF-8")
     Assert.assertEquals(stringValue, dequeuedValue)
   }
 }

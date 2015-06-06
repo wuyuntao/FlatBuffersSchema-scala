@@ -1,6 +1,6 @@
 // automatically generated, do not modify
 
-package FlatBuffers.Schema.Tests;
+package com.wuyuntao.flatbuffers.schema;
 
 import java.nio.*;
 import java.lang.*;

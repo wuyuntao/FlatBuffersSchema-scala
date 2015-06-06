@@ -1,4 +1,4 @@
-namespace FlatBuffers.Schema.Tests;
+namespace com.wuyuntao.flatbuffers.schema;
 
 enum MessageIds : int {
 	Ping = 1,

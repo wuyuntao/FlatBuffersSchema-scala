@@ -2,15 +2,16 @@ package com.wuyuntao.flatbuffers.schema
 
 import java.nio.ByteBuffer
 import scala.collection.mutable.HashMap
+import com.google.flatbuffers.Table
 
 final class MessageSchema {
   private val messages = new HashMap[Int, MessageCreator]()
 
-  def register(messageId: Int, creator: MessageCreator) = {
+  def register(messageId: Int, creator: (ByteBuffer) => Table): Unit = {
     if (messages.contains(messageId))
       throw new IllegalArgumentException("Message #%d is already defined".format(messageId))
 
-    messages.put(messageId, creator)
+    messages.put(messageId, MessageCreator(creator))
   }
 
   def parse(messageId: Int, data: Array[Byte]): Message = {
