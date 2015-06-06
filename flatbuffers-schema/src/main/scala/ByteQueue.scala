@@ -4,8 +4,6 @@ import java.nio.ByteBuffer
 import scala.collection.mutable.Queue
 
 private class ByteQueue {
-  private final val SizeOfInt = 4
-
   private val queue = new Queue[Array[Byte]]
   private var passedBytes = 0
 
@@ -17,7 +15,7 @@ private class ByteQueue {
   }
 
   def dequeue(): Option[Int] = {
-    val bytes = dequeue(SizeOfInt)
+    val bytes = dequeue(FlatBufferExtensions.SizeOfInt)
 
     if (bytes == null)
       return Option(ByteBuffer.wrap(bytes).getInt)
